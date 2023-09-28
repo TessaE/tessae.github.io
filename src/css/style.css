@@ -1,0 +1,38 @@
+:root {
+  --blue-medium: oklch(58% 0.2 276);
+  --blue-light: oklch(77% 0.1 282);
+  --blue-light--transparent: oklch(77% 0.1 282 / 12%);
+  --blue-dark: oklch(34% 0.12 278);
+  --blue-green: oklch(50% 0.08 195);
+  --blue-grey: oklch(74.5% 0.04 215);
+
+  --base-spacing-xs: 0.5rem;
+  --base-spacing-s: 1rem;
+  --base-spacing-m: 1.25rem;
+  --base-spacing-l: 2rem;
+  --base-spacing-xl: 2.5rem;
+}
+
+body {
+  background-color: var(--blue-light--transparent);
+}
+
+nav {
+  padding: var(--base-spacing-s);
+  text-align: center;
+  background-color: var(--blue-grey);
+}
+
+.main-banner {
+  padding: var(--base-spacing-xl) var(--base-spacing-m);
+  background-color: var(--blue-dark);
+  color: var(--blue-light);
+}
+
+.main-projects {
+  & ul {
+    padding: var(--base-spacing-m);
+    text-align: end;
+  }
+}
+
