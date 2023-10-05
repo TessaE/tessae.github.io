@@ -3,6 +3,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css/reset.css");
   eleventyConfig.addPassthroughCopy("src/css/style.css");
 
+  // Copy fonts over to `_site/fonts`
+  eleventyConfig.addPassthroughCopy("src/fonts/FiraMono-Regular.ttf");
+  eleventyConfig.addPassthroughCopy("src/fonts/recoleta-regular.otf");
+
   // Set custom directories for input, output, includes, and data
   return {
     dir: {

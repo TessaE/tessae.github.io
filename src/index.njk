@@ -4,15 +4,31 @@ title: My Portfolio
 ---
 <nav>TODO: logo</nav>
 <main>
-  <div class="main-banner">
-    <h1>Welcome to my portfolio</h1>
-    <p>This site is still in progress.</p>
+  <div class="main-intro--wrapper">
+    <aside>
+      <p>GitHub</p>
+    </aside>
+    <section class="main-intro">
+      <h1>Make it more corporate please</h1>
+      <p>
+        Pass the mayo, appeal to the client, sue the vice president. Make it more corporate please teams were able to drive
+        adoption and awareness, nor horsehead offer baseline Bob called an all-hands this afternoon, so we have put the apim bol,
+        temporarily so that we can later put the monitors on. Call in the air support baseline, but reach out game-plan i dont care
+        if you got some copy, why you dont use officeipsumcom or something like that ?. Forcing function feed the algorithm, so talk
+        to the slides, nor baseline, so not the long pole in my tent can you run this by clearance? hot johnny coming through my grasp
+        on reality right now is tenuous. Let's schedule a standup during the sprint to review our kpis commitment to the cause level
+        the playing field, so lift and shift, but gage [sic] where the industry is heading and give back to the community what weâ€™ve
+        learned, and please submit the sop and uat files by next monday.
+      </p>
+    </section>
   </div>
-  <div class="main-projects">
+  <section class="main-projects">
+    <h2>Projects:</h2>
     <ul>
       {% for post in collections.blog %}
       <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
       {% endfor %}
     </ul>
-  </div>
+  </section>
 </main>
+<footer>TODO: logo</footer>

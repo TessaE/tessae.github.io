@@ -1,10 +1,10 @@
 :root {
-  --blue-medium: oklch(58% 0.2 276);
-  --blue-light: oklch(77% 0.1 282);
-  --blue-light--transparent: oklch(77% 0.1 282 / 12%);
-  --blue-dark: oklch(34% 0.12 278);
-  --blue-green: oklch(50% 0.08 195);
-  --blue-grey: oklch(74.5% 0.04 215);
+  --light: oklch(99.4% 0.0032 315.16);
+  --pink: oklch(85.45% 0.05 332);
+  --purple: oklch(28% 0.05 350.35);
+  --dark-green: oklch(33% 0.04 151);
+  --dark-blue: oklch(45.8% 0.104 261.2);
+  --dark-grey: oklch(32% 0 160);
 
   --base-spacing-xs: 0.5rem;
   --base-spacing-s: 1rem;
@@ -13,26 +13,87 @@
   --base-spacing-xl: 2.5rem;
 }
 
-body {
-  background-color: var(--blue-light--transparent);
+@font-face {
+  font-family: "Recoleta";
+  src: url('/fonts/recoleta-regular.otf') format('opentype');
+  font-display: swap;
 }
 
-nav {
+@font-face {
+  font-family: "Fira";
+  src: url('/fonts/FiraMono-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+body {
+  background-color: var(--light);
+  max-width: 1200px;
+  margin-inline: auto;
+  font-family: "Fira", monospace;
+  letter-spacing: .02rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Recoleta";
+  margin-bottom: var(--base-spacing-m);
+  text-transform: uppercase;
+  letter-spacing: .12rem;
+}
+
+nav, footer {
   padding: var(--base-spacing-s);
   text-align: center;
-  background-color: var(--blue-grey);
+  color: var(--dark-grey);
 }
 
-.main-banner {
-  padding: var(--base-spacing-xl) var(--base-spacing-m);
-  background-color: var(--blue-dark);
-  color: var(--blue-light);
+main {
+  display: grid;
+  gap: 4rem;
+  background-color: var(--dark-green);
+  color: var(--light);
+}
+
+.main-intro--wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4rem;
+  margin-inline: 4rem;
+
+  & aside {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      padding-inline: 2.5rem;
+
+      & p::after {
+          content: '';
+          display: inline-block;
+          height: calc(100% - 100px);
+          width: 2px;
+          background-color: var(--pink);
+          margin-inline: 1rem;
+          margin-block: 6px 3px;
+        }
+    }
+}
+
+.main-intro {
+  margin-block: var(--base-spacing-xl);
+  padding: var(--base-spacing-xl) var(--base-spacing-l);
+  border: 4px double var(--pink);
+  border-radius: 2px;
+
+  & h1 {
+      text-align: center;
+    }
 }
 
 .main-projects {
+  margin-inline: 4rem;
+
   & ul {
     padding: var(--base-spacing-m);
-    text-align: end;
   }
 }
 
