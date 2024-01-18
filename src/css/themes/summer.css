@@ -59,7 +59,7 @@
     background-position: 0% 109.8%;
   }
 
-  .grid-2x2 {
+  .main-grid {
     gap: var(--base-spacing-s) 0;
   }
 }

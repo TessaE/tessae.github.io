@@ -98,7 +98,7 @@ main {
   }
 }
 
-.grid-2x2 {
+.main-grid {
   margin-inline: var(--base-spacing-xxl);
   display: grid;
   gap: var(--base-spacing-l) var(--base-spacing-xl);
