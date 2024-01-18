@@ -3,8 +3,10 @@
   --pink: oklch(85.45% 0.05 332);
   --purple: oklch(28% 0.05 350.35);
   --dark-green: oklch(34% 0.04 160);
+  --light-green: oklch(96% 0.0196 134 / 80%);
+  --light-yellow: oklch(99% 0.012 95);
   --dark-blue: oklch(45.8% 0.104 261.2);
-  --dark-grey: oklch(32% 0 160);
+  --dark-grey: oklch(16% 0 160);
 
   --base-spacing-xs: 0.5rem;
   --base-spacing-s: 1rem;
@@ -14,30 +16,19 @@
   --base-spacing-xxl: 4rem;
 }
 
-@font-face {
-  font-family: "Recoleta";
-  src: url('/fonts/recoleta-regular.otf') format('opentype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira";
-  src: url('/fonts/FiraMono-Regular.ttf') format('opentype');
-  font-display: swap;
-}
-
 body {
-  background-color: var(--light);
   max-width: 1200px;
   margin-inline: auto;
-  font-family: "Fira", monospace;
+  font-family: var(--main-text-font);
+  font-size: 1rem;
   letter-spacing: .02rem;
   line-height: 1.6;
-  text-align: justify;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
 }
 
 h1, h2, h3, h4 {
-  font-family: "Recoleta";
+  font-family: var(--main-title-font);
   margin-bottom: var(--base-spacing-m);
   text-transform: uppercase;
   letter-spacing: .12rem;
@@ -46,14 +37,23 @@ h1, h2, h3, h4 {
 nav, footer {
   padding: var(--base-spacing-s);
   text-align: center;
-  color: var(--dark-grey);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--base-spacing-xs);
+
+  & fieldset {
+    font-size: 0.9rem;
+  }
 }
 
 main {
   display: grid;
-  gap: var(--base-spacing-xxl);
-  background-color: var(--dark-green);
-  color: var(--light);
+  gap: var(--base-spacing-xl);
   padding-block: var(--base-spacing-xl);
 }
 
@@ -86,14 +86,15 @@ main {
 }
 
 .main-intro {
-  padding: var(--base-spacing-xl) var(--base-spacing-l);
-  background-color: var(--light);
-  color: var(--dark-grey);
+  padding-block: var(--base-spacing-l);
   border-radius: 2px;
-  border: 4px double var(--dark-green);
+  /*border: 4px double var(--light);*/
+  font-size: 1.2rem;
 
-  & h1 {
-      text-align: center;
+  & ul {
+
+    margin-block: 0;
+    list-style-type: circle;
   }
 }
 
@@ -103,12 +104,6 @@ main {
   gap: var(--base-spacing-l) var(--base-spacing-xl);
   grid-template-columns: 1fr 1fr;
 
-  & h2 {
-    border-bottom: 2px solid var(--pink);
-    padding-bottom: 4px;
-    max-width: fit-content;
-  }
-
   & ul {
     padding: var(--base-spacing-m);
     padding-top: 0;
@@ -117,11 +112,35 @@ main {
 
   & li {
     text-align: start;
-    margin-block: 4px;
+    /*// TODO: make this global?*/
+    margin-block: 8px;
   }
+
+  .main-inspiration, .main-projects {
+    & ul {
+      list-style-type: none;
+      padding-inline: 0;
+    }
+  }
+
+  .main-inspiration {
+    grid-row: 1 / 3;
+  }
+
+  /*.main-interests {*/
+    /*& ul {*/
+    /*  margin-left: 20px;*/
+    /*}*/
+
+    /*& li::marker {*/
+    /*  content: "</> ";*/
+    /*}*/
+  /*}*/
 
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;
     margin-inline: var(--base-spacing-xl);
   }
 }
+
+/*// TODO: use width: min(100%, 75ch); and text-wrap: balance ?*/

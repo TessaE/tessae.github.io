@@ -1,0 +1,5 @@
+[data-theme="spring"] {
+  --main-text-font: monospace;
+  --main-background-color: var(--light-green);
+  --main-text-color: var(--dark-grey);
+}

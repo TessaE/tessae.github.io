@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "RibeyeMarrow";
+  src: url('/fonts/RibeyeMarrow-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url('/fonts/Raleway-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+[data-theme="summer"] {
+  --main-title-font: "RibeyeMarrow";
+  --main-text-font: "Raleway";
+  --main-background-color: var(--light-yellow);
+  --main-text-color: var(--dark-grey);
+
+  --summer-scribbles-svg: url("/images/summer-scribbles.svg");
+
+  .main-intro, .main-inspiration, .main-projects, .main-interests {
+    position: relative;
+  }
+
+  &::before {
+    content: " ";
+    background-image: var(--summer-scribbles-svg);
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    background-size: 60% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .main-intro::before {
+    background-size-x: 100%;
+    width: 600px;
+    height: 600px;
+  }
+
+  .main-inspiration, .main-projects, .main-interests {
+    padding: var(--base-spacing-s) var(--base-spacing-m);
+    /*// TODO: change backgroud pos-x based on container size*/
+    /*// TODO: change backgroud pos-y based on color/section*/
+  }
+
+  .main-inspiration::before {
+    background-position: 0% 36.5%;
+  }
+
+  .main-projects::before {
+    background-position: 0% 73.2%;
+  }
+
+  .main-interests::before {
+    background-position: 0% 109.8%;
+  }
+
+  .grid-2x2 {
+    gap: var(--base-spacing-s) 0;
+  }
+}

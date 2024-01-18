@@ -1,0 +1,11 @@
+[data-theme="autumn"] {
+  --main-text-font: monospace;
+  --main-background-color: var(--dark-green);
+  --main-text-color: var(--light);
+
+  .grid-2x2 h2 {
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 4px;
+    max-width: fit-content;
+  }
+}
