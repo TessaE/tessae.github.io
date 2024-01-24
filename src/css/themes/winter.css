@@ -1,15 +1,3 @@
-@font-face {
-  font-family: "Recoleta";
-  src: url('/fonts/recoleta-regular.otf') format('opentype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira";
-  src: url('/fonts/FiraMono-Regular.ttf') format('opentype');
-  font-display: swap;
-}
-
 [data-theme="winter"] {
   --main-title-font: "Recoleta";
   --main-text-font: "Fira", monospace;

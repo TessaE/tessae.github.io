@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "RibeyeMarrow";
+  src: url('/fonts/RibeyeMarrow-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url('/fonts/Raleway-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url('/fonts/recoleta-regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira";
+  src: url('/fonts/FiraMono-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+
 :root {
   --light: oklch(99.4% 0.0032 315.16);
   --pink: oklch(85.45% 0.05 332);

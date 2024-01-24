@@ -1,5 +1,22 @@
 [data-theme="spring"] {
-  --main-text-font: monospace;
+  --main-text-font: "Raleway", sans-serif;
   --main-background-color: var(--light-green);
   --main-text-color: var(--dark-grey);
+
+  .main-intro {
+    position: relative;
+  }
+
+  .main-intro::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    z-index: -1;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    background-image: radial-gradient(circle at center, lightyellow 70%, transparent 71%);
+  }
 }
