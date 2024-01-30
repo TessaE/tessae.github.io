@@ -1,5 +1,7 @@
 [data-theme="spring"] {
-  --main-text-font: "Raleway", sans-serif;
+  --main-title-font: "Jost Bold", sans-serif;
+  --main-text-font: "Jost", sans-serif;
+  --body-font-size: 1.1rem;
   --main-background-color: var(--light-green);
   --main-text-color: var(--dark-grey);
 
@@ -11,11 +13,11 @@
     content: "";
     display: block;
     position: absolute;
-    top: -50px;
+    top: -72px;
     left: -50px;
     z-index: -1;
     width: 100%;
-    max-width: 450px;
+    max-width: 464px;
     aspect-ratio: 1 / 1;
     background-image: radial-gradient(circle at center, lightyellow 70%, transparent 71%);
   }

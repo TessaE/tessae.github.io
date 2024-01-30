@@ -1,4 +1,16 @@
 @font-face {
+  font-family: "Jost";
+  src: url('/fonts/Jost-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jost Bold";
+  src: url('/fonts/Jost-Bold.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
   font-family: "RibeyeMarrow";
   src: url('/fonts/RibeyeMarrow-Regular.ttf') format('opentype');
   font-display: swap;
@@ -6,7 +18,19 @@
 
 @font-face {
   font-family: "Raleway";
-  src: url('/fonts/Raleway-Regular.ttf') format('opentype');
+  src: url('/fonts/Raleway-Medium.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url('/fonts/Outfit-Light.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit Black";
+  src: url('/fonts/Outfit-Black.ttf') format('opentype');
   font-display: swap;
 }
 
@@ -17,8 +41,26 @@
 }
 
 @font-face {
-  font-family: "Fira";
+  font-family: "Fira Mono";
   src: url('/fonts/FiraMono-Regular.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Mono Bold";
+  src: url('/fonts/FiraMono-Bold.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Blackout Sunrise";
+  src: url('/fonts/blackout_sunrise-webfont.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Blackout 2AM";
+  src: url('/fonts/blackout_two_am-webfont.woff') format('woff');
   font-display: swap;
 }
 
@@ -39,17 +81,20 @@
   --base-spacing-l: 2rem;
   --base-spacing-xl: 2.5rem;
   --base-spacing-xxl: 4rem;
+
+  --body-font-size: 1rem;
 }
 
 body {
   max-width: 1200px;
   margin-inline: auto;
   font-family: var(--main-text-font);
-  font-size: 1rem;
+  font-size: var(--body-font-size);
   letter-spacing: .02rem;
   line-height: 1.6;
   background-color: var(--main-background-color);
   color: var(--main-text-color);
+  text-wrap: balance;
 }
 
 h1, h2, h3, h4 {
@@ -57,6 +102,14 @@ h1, h2, h3, h4 {
   margin-bottom: var(--base-spacing-m);
   text-transform: uppercase;
   letter-spacing: .12rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
+li {
+  margin-block: 4px;
 }
 
 nav, footer {
@@ -68,23 +121,34 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   padding: var(--base-spacing-xs);
 
   & fieldset {
     font-size: 0.9rem;
   }
+
+  .theme-option {
+    display: flex;
+    align-items: center;
+    gap: var(--base-spacing-xs);
+    padding: var(--base-spacing-xs);
+  }
+
+  .theme-icon {
+    height: 20px;
+    width: auto;
+  }
 }
 
 main {
   display: grid;
-  gap: var(--base-spacing-xl);
+  gap: var(--base-spacing-l);
   padding-block: var(--base-spacing-xl);
 }
 
 .main-intro--wrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2.5fr;
   gap: 1rem;
   margin-inline: var(--base-spacing-xxl);
   margin-bottom: var(--base-spacing-m);
@@ -111,13 +175,11 @@ main {
 }
 
 .main-intro {
-  padding-block: var(--base-spacing-l);
+  padding-block: var(--base-spacing-m);
   border-radius: 2px;
-  /*border: 4px double var(--light);*/
   font-size: 1.2rem;
 
   & ul {
-
     margin-block: 0;
     list-style-type: circle;
   }
@@ -126,18 +188,15 @@ main {
 .main-grid {
   margin-inline: var(--base-spacing-xxl);
   display: grid;
-  gap: var(--base-spacing-l) var(--base-spacing-xl);
+  gap: var(--base-spacing-xl);
   grid-template-columns: 1fr 1fr;
 
   & ul {
-    padding: var(--base-spacing-m);
-    padding-top: 0;
+    padding-inline: var(--base-spacing-m);
     margin-top: 0;
   }
 
   & li {
-    text-align: start;
-    /*// TODO: make this global?*/
     margin-block: 8px;
   }
 
@@ -152,20 +211,8 @@ main {
     grid-row: 1 / 3;
   }
 
-  /*.main-interests {*/
-    /*& ul {*/
-    /*  margin-left: 20px;*/
-    /*}*/
-
-    /*& li::marker {*/
-    /*  content: "</> ";*/
-    /*}*/
-  /*}*/
-
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;
     margin-inline: var(--base-spacing-xl);
   }
 }
-
-/*// TODO: use width: min(100%, 75ch); and text-wrap: balance ?*/

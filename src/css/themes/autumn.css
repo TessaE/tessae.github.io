@@ -1,5 +1,6 @@
 [data-theme="autumn"] {
-  --main-text-font: monospace;
+  --main-title-font: "Recoleta", serif;
+  --main-text-font: "Outfit", serif;
   --main-background-color: var(--dark-green);
   --main-text-color: var(--light);
 

@@ -1,6 +1,14 @@
 [data-theme="winter"] {
-  --main-title-font: "Recoleta";
-  --main-text-font: "Fira", monospace;
+  --main-title-font: "Blackout Sunrise", monospace;
+  --main-text-font: "Fira Mono", monospace;
   --main-background-color: var(--light);
   --main-text-color: var(--dark-grey);
+
+  body, h1, h2, h3, h4 {
+    letter-spacing: initial;
+  }
+
+  h2, h3, h4 {
+    font-family: "Blackout 2AM", monospace;;
+  }
 }

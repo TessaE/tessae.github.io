@@ -3,10 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
 
   // Copy fonts over to `_site/fonts`
-  eleventyConfig.addPassthroughCopy("src/fonts/RibeyeMarrow-Regular.ttf");
-  eleventyConfig.addPassthroughCopy("src/fonts/Raleway-Regular.ttf");
-  eleventyConfig.addPassthroughCopy("src/fonts/FiraMono-Regular.ttf");
-  eleventyConfig.addPassthroughCopy("src/fonts/recoleta-regular.otf");
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   // Copy images over to `_site/images`
   eleventyConfig.addPassthroughCopy("src/images");

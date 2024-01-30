@@ -1,6 +1,6 @@
 [data-theme="summer"] {
-  --main-title-font: "RibeyeMarrow";
-  --main-text-font: "Raleway", sans-serif;
+  --main-title-font: "RibeyeMarrow", sans-serif;
+  --main-text-font: "Outfit", sans-serif;
   --main-background-color: var(--light-yellow);
   --main-text-color: var(--dark-grey);
 
@@ -29,12 +29,6 @@
     max-height: 600px;
   }
 
-  .main-inspiration, .main-projects, .main-interests {
-    padding: var(--base-spacing-s) var(--base-spacing-m);
-    /*// TODO: change backgroud pos-x based on container size*/
-    /*// TODO: change backgroud pos-y based on color/section*/
-  }
-
   .main-inspiration::before {
     background-position: 0% 36.5%;
   }
@@ -45,9 +39,5 @@
 
   .main-interests::before {
     background-position: 0% 109.8%;
-  }
-
-  .main-grid {
-    gap: var(--base-spacing-s) 0;
   }
 }
