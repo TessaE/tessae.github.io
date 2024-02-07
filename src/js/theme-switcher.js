@@ -1,8 +1,3 @@
-// TODO: do something with prefersReducedMotion? of preferscolorscheme?
-const prefersReducedMotion = window.matchMedia(
-  '(prefers-reduced-motion: reduce)'
-).matches;
-
 const THEME_STORAGE_KEY = 'user-theme';
 const THEMES = {
   spring: 'spring',

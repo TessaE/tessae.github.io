@@ -9,4 +9,8 @@
     padding-bottom: 4px;
     max-width: fit-content;
   }
+
+  .theme-icon {
+    filter: invert(1);
+  }
 }

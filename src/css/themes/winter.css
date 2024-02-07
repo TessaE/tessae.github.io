@@ -9,6 +9,10 @@
   }
 
   h2, h3, h4 {
-    font-family: "Blackout 2AM", monospace;;
+    font-family: "Blackout 2AM", monospace;
+  }
+
+  .punct {
+    font-family: var(--main-text-font);
   }
 }
