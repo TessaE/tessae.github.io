@@ -4,40 +4,21 @@
   --main-background-color: var(--light-yellow);
   --main-text-color: var(--dark-grey);
 
-  --summer-scribbles-svg: url("/images/summer-scribbles.svg");
-
-  .main-intro, .main-inspiration, .main-projects, .main-interests {
-    position: relative;
-
-    &::before {
-      content: " ";
-      background-image: var(--summer-scribbles-svg);
-      width: 500px;
-      height: 500px;
-      position: absolute;
-      top: 0;
-      background-size: 60% auto;
-      background-position: 0% 0%;
-      background-repeat: no-repeat;
-      z-index: -1;
-    }
-  }
-
-  .main-intro::before {
-    background-size-x: 100%;
-    max-width: 600px;
-    max-height: 600px;
-  }
-
-  .main-inspiration::before {
-    background-position: 0% 36.5%;
-  }
-
-  .main-projects::before {
-    background-position: 0% 73.2%;
-  }
-
-  .main-interests::before {
-    background-position: 0% 109.8%;
+  .main-intro--wrapper::before {
+    content: "";
+    display: block;
+    height: 1000px;
+    width: calc(100vw + 200px);
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(150deg, #E1EDD7, #EBF8F2, #EBF8F2) fixed;
+    --mask:
+        radial-gradient(491.93px at 50% calc(100% - 660.00px),#000 100%,#0000 100%) calc(50% - 440px) 0/880px 100%,
+        radial-gradient(491.93px at 50% calc(100% + 440.00px),#0000 100%,#000 100%) 50% calc(100% - 220px)/880px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    transform: rotate(345deg);
+    top: -424px;
+    left: -100px;
   }
 }

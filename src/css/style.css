@@ -65,7 +65,7 @@
 }
 
 :root {
-  --light: oklch(99.4% 0.0032 315.16);
+  --light: oklch(99% 0.005 325);
   --pink: oklch(85.45% 0.05 332);
   --purple: oklch(28% 0.05 350.35);
   --dark-green: oklch(24% 0.04 164);
@@ -111,7 +111,7 @@ li {
   margin-block: 4px;
 }
 
-nav, footer {
+header, footer {
   padding: var(--base-spacing-s);
   text-align: center;
 }
@@ -120,7 +120,16 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: var(--base-spacing-xs);
+  align-items: end;
+
+  .laptop-logo {
+    height: 56px;
+    width: auto;
+
+    path {
+      stroke: var(--main-text-color);
+    }
+  }
 
   & .theme-switcher {
     font-size: 0.9rem;
@@ -250,4 +259,9 @@ main {
     grid-template-columns: 1fr;
     margin-inline: var(--base-spacing-xl);
   }
+}
+
+footer {
+  font-size: 0.8rem;
+  text-wrap: balance;
 }
