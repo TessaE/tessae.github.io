@@ -7,21 +7,44 @@
   --summer-green: oklch(94% 0.04 130);
   --summer-blue: oklch(98% 0.012 190);
 
-  .main-intro--wrapper::before {
+  .main-intro--wrapper::before, footer::before {
     content: "";
     display: block;
-    height: 1000px;
-    width: calc(100vw + 200px);
     position: absolute;
     z-index: -1;
     background: linear-gradient(150deg, var(--summer-green) 12%, var(--summer-blue) 64%) fixed;
-    --mask:
-        radial-gradient(491.93px at 50% calc(100% - 660.00px),#000 100%,#0000 100%) calc(50% - 440px) 0/880px 100%,
-        radial-gradient(491.93px at 50% calc(100% + 440.00px),#0000 100%,#000 100%) 50% calc(100% - 220px)/880px 100% repeat-x;
     -webkit-mask: var(--mask);
     mask: var(--mask);
+  }
+
+  .main-intro--wrapper::before {
+    height: 1000px;
+    width: calc(100vw + 200px);
     transform: rotate(345deg);
     top: -424px;
     left: -100px;
+    --mask:
+            radial-gradient(491.93px at 50% calc(100% - 660.00px),#000 100%,#0000 100%) calc(50% - 440px) 0/880px 100%,
+            radial-gradient(491.93px at 50% calc(100% + 440.00px),#0000 100%,#000 100%) 50% calc(100% - 220px)/880px 100% repeat-x;
+  }
+  
+  footer {
+    position: relative;
+  }
+
+  footer::before {
+    height: 120px;
+    width: calc(100vw);
+    top: -50px;
+    left: calc(((100vw - 1200px) / 2) * -1);
+    --mask:
+          radial-gradient(178.89px at 50% 240.00px,#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%,
+          radial-gradient(178.89px at 50% -160px,#0000 99%,#000 101%) 50% 80px/320px 100% repeat-x;
+  }
+
+  @media (max-width: 1200px) {
+    footer::before {
+      left: 0;
+    }
   }
 }

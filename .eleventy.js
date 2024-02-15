@@ -11,6 +11,9 @@ module.exports = function(eleventyConfig) {
   // Copy js over to `_site/js`
   eleventyConfig.addPassthroughCopy("src/js");
 
+  // Copy favicon over to `root
+  eleventyConfig.addPassthroughCopy({"src/images/favicons/favicon.ico": "favicon.ico"});
+
   // Set custom directories for input, output, includes, and data
   return {
     dir: {

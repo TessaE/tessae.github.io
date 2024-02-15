@@ -288,10 +288,3 @@ dialog {
     text-align: end;
   }
 }
-
-@supports (selector(&)) {
-  /* show a warning message when CSS nesting is not supported by the browser; hide it when it is */
-  dialog {
-    /*display: none;*/
-  }
-}
