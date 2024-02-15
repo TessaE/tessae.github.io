@@ -11,11 +11,17 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/themes.css">
 
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png"/>
+
+    <script src="/js/check-css-support.js"></script>
     <script src="/js/theme-switcher.js" defer></script>
   </head>
   <body>
     {% include "header.njk" %}
     <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
     {{ content | safe }}
+
+    {% include "css-support-warning.njk" %}
   </body>
 </html>

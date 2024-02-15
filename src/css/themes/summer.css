@@ -4,6 +4,9 @@
   --main-background-color: var(--light-yellow);
   --main-text-color: var(--dark-grey);
 
+  --summer-green: oklch(94% 0.04 130);
+  --summer-blue: oklch(98% 0.012 190);
+
   .main-intro--wrapper::before {
     content: "";
     display: block;
@@ -11,7 +14,7 @@
     width: calc(100vw + 200px);
     position: absolute;
     z-index: -1;
-    background: linear-gradient(150deg, #E1EDD7, #EBF8F2, #EBF8F2) fixed;
+    background: linear-gradient(150deg, var(--summer-green) 12%, var(--summer-blue) 64%) fixed;
     --mask:
         radial-gradient(491.93px at 50% calc(100% - 660.00px),#000 100%,#0000 100%) calc(50% - 440px) 0/880px 100%,
         radial-gradient(491.93px at 50% calc(100% + 440.00px),#0000 100%,#000 100%) 50% calc(100% - 220px)/880px 100% repeat-x;

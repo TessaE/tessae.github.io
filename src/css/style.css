@@ -107,6 +107,10 @@ h5 {
   font-size: 0.9rem;
 }
 
+a:hover {
+  opacity: .64;
+}
+
 li {
   margin-block: 4px;
 }
@@ -148,6 +152,11 @@ header {
     & span {
       display: none;
     }
+
+    &:has(:focus-visible) {
+      outline: 2px solid var(--main-text-color);
+      outline-offset: 2px;
+    }
   }
 
   .theme-option:hover {
@@ -160,7 +169,9 @@ header {
   }
 
   .theme-option input {
-    display: none;
+    height: 0;
+    width: 0;
+    position: absolute;
   }
 
   .theme-icon {
@@ -209,7 +220,11 @@ main {
 
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;
-    margin-inline: var(--base-spacing-l);
+    margin-inline: var(--base-spacing-m);
+
+    & ul {
+      padding-inline-start: var(--base-spacing-l);
+    }
   }
 }
 
@@ -257,11 +272,26 @@ main {
 
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;
-    margin-inline: var(--base-spacing-xl);
+    margin-inline: var(--base-spacing-l);
   }
 }
 
 footer {
   font-size: 0.8rem;
   text-wrap: balance;
+}
+
+dialog {
+  max-width: min(650px, calc(100% - 2em - 6px));
+
+  & form {
+    text-align: end;
+  }
+}
+
+@supports (selector(&)) {
+  /* show a warning message when CSS nesting is not supported by the browser; hide it when it is */
+  dialog {
+    /*display: none;*/
+  }
 }
