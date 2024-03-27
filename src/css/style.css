@@ -68,7 +68,7 @@
   --light: oklch(99% 0.005 325);
   --pink: oklch(85.45% 0.05 332);
   --purple: oklch(28% 0.05 350.35);
-  --dark-green: oklch(24% 0.04 164);
+  --dark-green: oklch(22% 0.02 164);
   --light-green: oklch(96% 0.0196 134 / 80%);
   --light-yellow: oklch(99% 0.012 95);
   --dark-blue: oklch(45.8% 0.104 261.2);
@@ -107,7 +107,7 @@ h5 {
   font-size: 0.9rem;
 }
 
-a:hover {
+a:not(.laptop-logo-link):hover {
   opacity: .64;
 }
 
@@ -159,10 +159,6 @@ header {
     }
   }
 
-  .theme-option:hover {
-    background-color: color-mix(in oklch, var(--main-background-color) 50%, transparent);
-  }
-
   .theme-option:has(:checked) {
     border: 1px solid var(--main-text-color);
     border-radius: 50%;
@@ -198,29 +194,95 @@ main {
 
 .main-intro--wrapper {
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  gap: 1rem;
-  margin-inline: var(--base-spacing-xxl);
-  margin-bottom: var(--base-spacing-m);
+  grid-template-columns: 1fr 2.75fr;
+  gap: var(--base-spacing-xxl);
+  margin-inline: var(--base-spacing-l);
+  margin-block-end: var(--base-spacing-m);
 
   & aside {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    align-self: start;
+    display: grid;
+    gap: var(--base-spacing-xs);
+    margin-top: 60px;
 
-    & p::after {
-      content: '';
-      display: inline-block;
-      height: calc(100% - 100px);
-      width: 2px;
-      background-color: var(--pink);
-      margin-inline: 1rem;
-      margin-block: 6px 3px;
+    & label {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+
+      & input {
+        height: 0;
+        width: 0;
+        position: absolute;
+      }
     }
+
+    .my-face, .this-website {
+      max-width: 500px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      border: 1px solid transparent;
+
+      & p, & img {
+        display: none;
+      }
+    }
+
+    .my-face {
+      text-align: center;
+
+      img {
+        max-height: calc(100% - var(--body-font-size));
+        margin-inline: auto
+      }
+
+    }
+
+    .this-website p {
+      margin-block: var(--base-spacing-xs);
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    & label:has(:focus-visible) {
+      outline: 2px solid var(--main-text-color);
+      outline-offset: 2px;
+    }
+
+    & label:has(input:checked) {
+      .arrow {
+        /*TODO: fix slightly-off positioning of arrow*/
+        transform: rotate(180deg);
+      }
+
+      & + .my-face, & + .this-website {
+        /*TODO; change this somehow*/
+        max-height: 300px;
+        margin-block: var(--base-spacing-xs) var(--base-spacing-m);
+        padding: var(--base-spacing-s);
+        border-color: var(--main-text-color);
+
+        & p, & img {
+          display: block;
+        }
+      }
+    }
+
   }
 
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;
-    margin-inline: var(--base-spacing-m);
+    gap: var(--base-spacing-m);
+    margin-inline: var(--base-spacing-l);
+
+    & aside {
+      order: 1;
+      margin-top: var(--base-spacing-m);
+    }
 
     & ul {
       padding-inline-start: var(--base-spacing-l);
@@ -229,7 +291,8 @@ main {
 }
 
 .main-intro {
-  padding-block: var(--base-spacing-m);
+  max-width: 700px;
+  padding-bottom: var(--base-spacing-m);
   border-radius: 2px;
   font-size: 1.2rem;
 
