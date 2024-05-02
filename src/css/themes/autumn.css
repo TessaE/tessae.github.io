@@ -12,6 +12,10 @@
     }
   }
 
+  .main-intro h1 {
+    color: var(--pink);
+  }
+
   .main-grid h2 {
     border-bottom: 2px solid var(--pink);
     padding-bottom: 4px;

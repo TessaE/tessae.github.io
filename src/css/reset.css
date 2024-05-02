@@ -71,4 +71,8 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+input {
+  -moz-appearance: none;
+}
+
 /* Credit to https://andy-bell.co.uk/a-more-modern-css-reset/ */

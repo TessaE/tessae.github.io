@@ -68,7 +68,7 @@
   --light: oklch(99% 0.005 325);
   --pink: oklch(85.45% 0.05 332);
   --purple: oklch(28% 0.05 350.35);
-  --dark-green: oklch(22% 0.02 164);
+  --dark-green: oklch(25% 0.02 164);
   --light-green: oklch(96% 0.0196 134 / 80%);
   --light-yellow: oklch(99% 0.012 95);
   --dark-blue: oklch(45.8% 0.104 261.2);
@@ -139,6 +139,12 @@ header {
     font-size: 0.9rem;
     display: flex;
     gap: 4px;
+  }
+
+  @media (scripting: none) {
+    .theme-switcher {
+      display: none;
+    }
   }
 
   .theme-option {
@@ -234,7 +240,8 @@ main {
 
       img {
         max-height: calc(100% - var(--body-font-size));
-        margin-inline: auto
+        margin-inline: auto;
+        transform: translateZ(0);
       }
 
     }
