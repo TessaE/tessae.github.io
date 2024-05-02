@@ -4,11 +4,11 @@
   --main-background-color: var(--light);
   --main-text-color: var(--dark-grey);
 
-  body, h1, h2, h3, h4 {
+  body, h1, h2 {
     letter-spacing: initial;
   }
 
-  h2, h3, h4 {
+  h2 {
     font-family: "Blackout 2AM", monospace;
   }
 
