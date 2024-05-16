@@ -1,0 +1,120 @@
+[data-theme="spring"] {
+  --main-title-font: "Jost Bold", sans-serif;
+  --main-text-font: "Jost", sans-serif;
+  --body-font-size: 1.1rem;
+  --main-background-color: var(--light-green);
+  --main-text-color: var(--dark-grey);
+
+  .main-intro {
+    position: relative;
+  }
+
+  .main-intro::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: -50px;
+    z-index: -1;
+    width: 100%;
+    max-width: 464px;
+    aspect-ratio: 1 / 1;
+    background-image: radial-gradient(circle at center, lightyellow 70%, transparent 71%);
+  }
+}
+[data-theme="summer"] {
+  --main-title-font: "RibeyeMarrow", sans-serif;
+  --main-text-font: "Outfit", sans-serif;
+  --main-background-color: var(--light-yellow);
+  --main-text-color: var(--dark-grey);
+
+  --summer-green: oklch(94% 0.04 130);
+  --summer-blue: oklch(98% 0.012 190);
+
+  .main-intro--wrapper::before, footer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(150deg, var(--summer-green) 12%, var(--summer-blue) 64%) fixed;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  .main-intro--wrapper::before {
+    height: 1000px;
+    width: calc(100vw + 200px);
+    transform: rotate(345deg);
+    top: -424px;
+    left: -100px;
+    --mask:
+            radial-gradient(491.93px at 50% calc(100% - 660.00px),#000 100%,#0000 100%) calc(50% - 440px) 0/880px 100%,
+            radial-gradient(491.93px at 50% calc(100% + 440.00px),#0000 100%,#000 100%) 50% calc(100% - 220px)/880px 100% repeat-x;
+  }
+  
+  footer {
+    position: relative;
+  }
+
+  footer::before {
+    height: 120px;
+    width: calc(100vw);
+    top: -50px;
+    left: calc(((100vw - 1200px) / 2) * -1);
+    --mask:
+          radial-gradient(178.89px at 50% 240.00px,#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%,
+          radial-gradient(178.89px at 50% -160px,#0000 99%,#000 101%) 50% 80px/320px 100% repeat-x;
+  }
+
+  @media (max-width: 1200px) {
+    footer::before {
+      left: 0;
+    }
+  }
+}
+[data-theme="autumn"] {
+  --main-title-font: "Recoleta", serif;
+  --main-text-font: "Outfit", serif;
+  --main-background-color: var(--dark-green);
+  --main-text-color: var(--light);
+
+  .main-intro--wrapper aside .my-face {
+    img {
+      background-color: color-mix(in oklch, var(--light-green), transparent 5%);
+      margin-block: 8px;
+      max-height: calc(100% - var(--body-font-size) - 16px);
+    }
+  }
+
+  .main-intro h1 {
+    color: var(--pink);
+  }
+
+  .main-grid h2 {
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 4px;
+    max-width: fit-content;
+  }
+
+  .theme-icon {
+    filter: invert(1);
+  }
+}
+[data-theme="winter"] {
+  --main-title-font: "Blackout Sunrise", monospace;
+  --main-text-font: "Fira Mono", monospace;
+  --main-background-color: var(--light);
+  --main-text-color: var(--dark-grey);
+
+  body, h1, h2 {
+    letter-spacing: initial;
+  }
+
+  h2 {
+    font-family: "Blackout 2AM", monospace;
+  }
+
+  .punct {
+    font-family: var(--main-text-font);
+  }
+}
