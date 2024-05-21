@@ -99,6 +99,10 @@
   .theme-icon {
     filter: invert(1);
   }
+
+  .punct {
+    font-family: var(--main-text-font);
+  }
 }
 [data-theme="winter"] {
   --main-title-font: "Blackout Sunrise", monospace;
