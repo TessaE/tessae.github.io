@@ -184,6 +184,8 @@ main {
   display: grid;
   gap: var(--base-spacing-l);
   padding-block: var(--base-spacing-xl);
+  position: relative;
+  overflow-x: clip;
 }
 
 .main-intro--wrapper {
