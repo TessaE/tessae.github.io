@@ -82,6 +82,7 @@
   --base-spacing-xxl: 4rem;
 
   --body-font-size: 1rem;
+  --font-size-smaller: 0.9rem;
 }
 
 body {
@@ -105,7 +106,7 @@ h1, h2 {
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: var(--font-size-smaller);
   margin-block: 1.67rem;
   line-height: 1.67;
 }
@@ -139,7 +140,7 @@ header {
   }
 
   & .theme-switcher {
-    font-size: 0.9rem;
+    font-size: var(--font-size-smaller);
     display: flex;
     gap: 4px;
   }
@@ -203,11 +204,11 @@ main {
     display: grid;
     gap: var(--base-spacing-xs);
     margin-top: 60px;
+    font-size: var(--font-size-smaller);
 
     & label {
       cursor: pointer;
       font-weight: bold;
-      font-size: 0.95rem;
 
       & input {
         height: 0;
@@ -256,7 +257,6 @@ main {
       }
 
       & + .my-face, & + .this-website {
-        /*TODO; change this somehow*/
         max-height: 300px;
         margin-block: var(--base-spacing-xs) var(--base-spacing-m);
         padding: var(--base-spacing-s);
@@ -336,7 +336,7 @@ main {
 }
 
 footer {
-  font-size: 0.8rem;
+  font-size: var(--font-size-smaller);
   text-wrap: balance;
 }
 
